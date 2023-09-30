@@ -1,3 +1,92 @@
+// ARRAY OF OBJECTS
+
+const animalArray = [
+	{
+		picturePath: './resources/cat.jpg',
+		soundPath: 'resources/cat_sound.mp3',
+		answerOne: 'dog',
+		answerTwo: 'cat',
+	},
+	{
+		picturePath: './resources/dog.jpg',
+		soundPath: 'resources/dog_sound.mp3',
+		answerOne: 'dog',
+		answerTwo: 'bird',
+	},
+	{
+		picturePath: 'resources/elephant.jpg',
+		soundPath: 'resources/elephant_sound.mp3',
+		answerOne: 'giraffe',
+		answerTwo: 'elephant',
+	},
+	{
+		picturePath: 'resources/lion.jpg',
+		soundPath: 'resources/lion_sound.mp3',
+		answerOne: 'fish',
+		answerTwo: 'lion',
+	},
+];
+
+// Target Answer buttons and change text
+const answer1 = document.querySelector('.answer1');
+const answer2 = document.querySelector('.answer2');
+
+function generateAnswers(num) {
+	answer1.innerText = animalArray[num].answerOne;
+	answer2.innerText = animalArray[num].answerTwo;
+}
+
+function generateRandomAnimal() {
+	const imagedisplay = document.querySelector('.imagedisplay');
+	// generate random image from array of objects
+	let randomIndex = Math.floor(Math.random() * animalArray.length);
+	// Target Image and change picture
+	imagedisplay.src = animalArray[randomIndex].picturePath;
+
+	// Generate Two answers for eaach image to pic from
+	generateAnswers(randomIndex);
+	// Target Audio and play animal sound
+	document
+		.getElementById('play')
+		.addEventListener('click', function () {
+			const audio = document.getElementById('audio');
+			audio.src = animalArray[randomIndex].soundPath;
+			audio.play();
+		});
+
+	// FIND CURRENT IMAGE IN WORDS
+	currentImage = animalArray[randomIndex].picturePath
+		.split('/')
+		.pop()
+		.split('.')[0];
+	console.log(currentImage);
+}
+
+// Target "Next Button" and generate a new image whenever it is clicked
+const next = document.querySelector('.next-button');
+next.addEventListener('click', generateRandomAnimal);
+
+const chosenAnswers = document.querySelectorAll('.answer');
+// ChosenAnswer is an array so we have to iterate
+chosenAnswers.forEach((chosenAnswer) => {
+	chosenAnswer.addEventListener('click', function () {
+		const chosenText = chosenAnswer.innerText;
+		if (chosenText === currentImage) {
+			const feedback = document.getElementById('feedback');
+			feedback.src = './resources/great-job.mp3';
+			feedback.play();
+			generateRandomAnimal();
+			console.log('Equal');
+		} else {
+			const feedback = document.getElementById('feedback');
+			feedback.src = './resources/uh-oh.mp3';
+			feedback.play();
+
+			console.log('Not Equal');
+		}
+	});
+});
+
 // BUTTON ANIMATION
 var animateButton = function (e) {
 	e.preventDefault;
@@ -22,48 +111,3 @@ for (var i = 0; i < bubblyButtons.length; i++) {
 for (var i = 0; i < buttonLink.length; i++) {
 	buttonLink[i].addEventListener('dblclick', animateButton, false);
 }
-
-// ARRAY OF OBJECTS
-
-const animalArray = [
-	{
-		picturePath: './resources/cat.jpg',
-		soundPath: 'resources/cat_sound.mp3',
-		answerOne: 'dog',
-		answerTwo: 'cat',
-	},
-	{
-		picturePath: './resources/dog.jpg',
-		soundPath: 'resources/dog_sound.mp3',
-		answerOne: 'dog',
-		answerTwo: 'bird',
-	},
-	{
-		picturePath: 'resources/elephant.jpg',
-		soundPath: 'resources/elephant_sound.mp3',
-		answerOne: 'giraffe',
-		answerTwo: 'elephant',
-	},
-];
-
-// Target Image and change picture
-const imagedisplay = document.querySelector('.imagedisplay');
-imagedisplay.src = animalArray[2].picturePath;
-
-// Target Answer buttons and change text
-const answer1 = document.querySelector('.answer1');
-const answer2 = document.querySelector('.answer2');
-answer1.innerText = animalArray[2].answerOne;
-answer2.innerText = animalArray[2].answerTwo;
-
-// Target Audio and play animal sound
-// GET SOUND TO PLAY
-const audio = new Audio();
-audio.src = animalArray[2].soundPath;
-
-const play = document.querySelector('.play');
-const att = document.createAttribute('onClick');
-att.value = 'audio.play();';
-play.setAttributeNode(att);
-
-console.log(play);

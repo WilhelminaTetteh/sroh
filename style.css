@@ -57,7 +57,7 @@ body {
 	font-size: 1em;
 	padding: 1em 2em;
 	/* margin-top: 100px; */
-	margin-bottom: 60px;
+	/* margin-bottom: 60px; */
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: #198754;
@@ -201,6 +201,10 @@ body {
 	align-items: center;
 	padding-top: 50px;
 }
+.for-inputs {
+	padding: 5px;
+	font-size: 70px;
+}
 .imagedisplay {
 	width: 700px;
 	height: 400px;
@@ -218,8 +222,30 @@ body {
 .sound-button {
 	display: flex;
 	width: 100px;
+	height: 80px;
+	align-items: center;
+	justify-content: center;
+	width: 350px;
+	/* border-radius: 100%; */
+}
+.next-button {
+	display: flex;
+	width: 100px;
 	height: 100px;
 	align-items: center;
 	justify-content: center;
-	/* border-radius: 100%; */
+	width: 350px;
+	/* margin-right: -145px; */
+}
+/* .game-body {
+	position: absolute;
+} */
+.generate {
+	position: relative;
+	top: 15%;
+	right: 0;
+}
+.action-buttons {
+	display: flex;
+	justify-content: space-evenly;
 }
