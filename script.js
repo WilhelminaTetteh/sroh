@@ -62,6 +62,9 @@ function generateRandomAnimal() {
 	console.log(currentImage);
 }
 
+//Initial Generation
+generateRandomAnimal();
+
 // Target "Next Button" and generate a new image whenever it is clicked
 const next = document.querySelector('.next-button');
 next.addEventListener('click', generateRandomAnimal);
