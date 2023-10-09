@@ -2,7 +2,6 @@
 
 # Object Identification Project for Children
 
-![Project Image](images/project_image.png) <!-- Replace with an actual image related to your project -->
 
 ## Table of Contents
 - [Introduction](#introduction)
