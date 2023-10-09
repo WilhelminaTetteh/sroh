@@ -194,6 +194,7 @@ body {
 }
 
 /* END OF BUTTON ANIMATION */
+
 .display {
 	display: flex;
 	flex-direction: column;
@@ -231,7 +232,7 @@ body {
 .next-button {
 	display: flex;
 	width: 100px;
-	height: 100px;
+	height: 80px;
 	align-items: center;
 	justify-content: center;
 	width: 350px;
@@ -248,4 +249,41 @@ body {
 .action-buttons {
 	display: flex;
 	justify-content: space-evenly;
+}
+
+@media screen and (max-width: 958px) {
+	.imagedisplay {
+		width: 100%;
+		height: 400px;
+	}
+	.answer {
+		width: 40%;
+		margin: 0;
+	}
+	.answers,
+	.action-buttons {
+		display: flex;
+		justify-content: space-around !important;
+	}
+	.answer1 {
+		margin: 20px !important;
+		width: 40%;
+		margin: 0;
+	}
+	.answer2 {
+		margin: 20px !important;
+		width: 40%;
+		margin: 0;
+	}
+	.answer:hover {
+		scale: 1;
+		background-color: black !important;
+		color: #fff !important;
+	}
+}
+@media screen and (max-width: 475px) {
+	.imagedisplay {
+		width: 100%;
+		height: 250px;
+	}
 }

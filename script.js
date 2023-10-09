@@ -25,6 +25,24 @@ const animalArray = [
 		answerOne: 'fish',
 		answerTwo: 'lion',
 	},
+	{
+		picturePath: 'resources/frog.jpg',
+		soundPath: 'resources/frogg sound effect.mp3',
+		answerOne: 'frog',
+		answerTwo: 'lizard',
+	},
+	{
+		picturePath: 'resources/snake.jpg',
+		soundPath: 'resources/snake-sound.mp3',
+		answerOne: 'snake',
+		answerTwo: 'lion',
+	},
+	{
+		picturePath: 'resources/horse.jpg',
+		soundPath: 'resources/horses_sound.mp3',
+		answerOne: 'goose',
+		answerTwo: 'horse',
+	},
 ];
 
 // Target Answer buttons and change text
